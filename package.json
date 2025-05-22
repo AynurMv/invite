@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://aynurmv.github.io/wedding-invite/",
+  "homepage": "https://aynurmv.github.io/invite/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
