@@ -12,7 +12,7 @@ export default defineConfig({
     sourcemap: false,
     minify: "esbuild",
   },
-  base: "/wedding-invite/",
+  base: "/wedding-invite",
   plugins: [
     react(),
     checker({
