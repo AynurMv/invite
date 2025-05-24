@@ -6,6 +6,7 @@ import bolgarPhoto from "@assets/photo/bolgar.jpg"
 import ikeuPhoto from "@assets/photo/ikeu.jpg"
 import zilyousssPhoto from "@assets/photo/zilechka.jpg"
 import { ReactNode, useEffect, useRef, useState } from "react"
+import { PuffLoader } from "react-spinners"
 import ContentPage from "./components/ContentPage/ContentPage"
 import EnvelopeInviteAnimation from "./components/EnvelopeInviteAnimation/EnvelopeInviteAnimation"
 import "./App.scss"
@@ -69,7 +70,11 @@ function App() {
       />
     )
   } else if (!resourcesLoaded) {
-    content = <div className="loading">Загружается содержимое…</div>
+    content = (
+      <div className="loading">
+        <PuffLoader color="#253759" size={100} />
+      </div>
+    )
   } else {
     content = (
       <ContentPage
