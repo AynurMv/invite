@@ -1,4 +1,4 @@
-import musicTrack from "@assets/Dzho_Kiri_End_of_Beginning.mp3"
+import musicTrack from "@assets/American_Authors_-_Best_Day_Of_My_Life_47844129.mp3"
 import pauseIcon from "@assets/kartinki/pause.svg"
 import playIcon from "@assets/kartinki/play.svg"
 import { useEffect, FC, Dispatch, RefObject, SetStateAction } from "react"

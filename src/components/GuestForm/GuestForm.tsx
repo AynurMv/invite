@@ -9,7 +9,8 @@ import ZurText from "../ZurText/ZurText"
 type FormData = {
   name: string
   attendance: string
-  alcohol: string[]
+  hasChildren: string
+  congrats: string[]
 }
 
 const GuestForm: FC<{
@@ -20,7 +21,8 @@ const GuestForm: FC<{
   const [form, setForm] = useState<FormData>({
     name: "",
     attendance: "",
-    alcohol: [],
+    hasChildren: "",
+    congrats: [],
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const successRef = useRef<HTMLDivElement>(null)
@@ -42,8 +44,8 @@ const GuestForm: FC<{
   const handleCheckboxChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     const { value, checked } = e.target
     setForm((prev) => {
-      const alcohol = checked ? [...prev.alcohol, value] : prev.alcohol.filter((item) => item !== value)
-      return { ...prev, alcohol }
+      const congrats = checked ? [...prev.congrats, value] : prev.congrats.filter((item) => item !== value)
+      return { ...prev, congrats }
     })
   }
 
@@ -51,7 +53,7 @@ const GuestForm: FC<{
     e.preventDefault()
     try {
       const url =
-        "https://script.google.com/macros/s/AKfycbzJXbW9g9L4zvklStwxGigCNoiAMiwTLPLIFJ6-U6BJ8l1HWLqyDkX5zYsFTANizguk/exec"
+        "https://script.google.com/macros/s/AKfycbxZPQspM_8pmarZ4HoCVlpBl6bv2pks6VtiNq_R_8jjnqoIC6BPHBcboHAEY0sRtG5-/exec"
       const formData = new FormData(e.currentTarget)
       setIsSubmitted(true)
       await fetch(url, {
@@ -122,17 +124,17 @@ const GuestForm: FC<{
                         checked={form.attendance === "yes"}
                         onChange={handleInputChange}
                       />
-                      Смогу / сможем присутствовать
+                      Да
                     </label>
                     <label className="guest-form__radio">
                       <input
                         type="radio"
                         name="attendance"
-                        value="maybe"
-                        checked={form.attendance === "maybe"}
+                        value="plusOne"
+                        checked={form.attendance === "plusOne"}
                         onChange={handleInputChange}
                       />
-                      Затрудняюсь ответить, сообщу позже
+                      Да с партнером
                     </label>
                     <label className="guest-form__radio">
                       <input
@@ -142,20 +144,67 @@ const GuestForm: FC<{
                         checked={form.attendance === "no"}
                         onChange={handleInputChange}
                       />
-                      Не смогу прийти
+                      Нет
+                    </label>
+                    <label className="guest-form__radio">
+                      <input
+                        type="radio"
+                        name="attendance"
+                        value="maybe"
+                        checked={form.attendance === "maybe"}
+                        onChange={handleInputChange}
+                      />
+                      Сообщу позже
                     </label>
                   </div>
 
                   <div className="guest-form__group">
-                    <div className="guest-form__legend">Какой алкоголь предпочитаете?</div>
+                    <div className="guest-form__legend">Будете ли вы с детьми?</div>
+                    <label className="guest-form__radio">
+                      <input
+                        type="radio"
+                        name="hasChildren"
+                        value="yes"
+                        checked={form.hasChildren === "yes"}
+                        onChange={handleInputChange}
+                      />
+                      Да
+                    </label>
+                    <label className="guest-form__radio">
+                      <input
+                        type="radio"
+                        name="hasChildren"
+                        value="no"
+                        checked={form.hasChildren === "no"}
+                        onChange={handleInputChange}
+                      />
+                      Нет
+                    </label>
+                    <label className="guest-form__radio">
+                      <input
+                        type="radio"
+                        name="hasChildren"
+                        value="maybe"
+                        checked={form.hasChildren === "maybe"}
+                        onChange={handleInputChange}
+                      />
+                      Сообщу позже
+                    </label>
+                  </div>
+                  <div className="guest-form__group">
+                    <div className="guest-form__legend">Планируете ли вы выступить с поздравлением?</div>
                     <p className="guest-form__hint">Можно выбрать несколько вариантов</p>
-                    {["Игристое", "Вино белое", "Вино красное", "Виски", "Не пью алкоголь"].map((item) => (
+                    {[
+                      "Да, хотим сказать несколько слов",
+                      "Нет, лучше передадим лично",
+                      "Запишем видео / напишем открытку",
+                    ].map((item) => (
                       <label key={item} className="guest-form__checkbox">
                         <input
                           type="checkbox"
-                          name="alcohol"
+                          name="congrats"
                           value={item}
-                          checked={form.alcohol.includes(item)}
+                          checked={form.congrats.includes(item)}
                           onChange={handleCheckboxChange}
                         />
                         {item}

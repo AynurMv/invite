@@ -138,7 +138,7 @@ const ContentPage: FC<ContentPagePropsType> = ({
         <NormText
           marginTop={isSmallScreen ? "104px" : "0px"}
           maxWidth={isSmallScreen ? "275px" : "320px"}
-          text="Мы ждем вас на берегу озера Сенеж в загородном комплексе The Sun Event"
+          text="Мы ждем вас в ресторане «Орловский дворец» в городе Набережные Челны"
         />
       </AnimatedWrapper>
       <AnimatedWrapper>
@@ -174,7 +174,7 @@ const ContentPage: FC<ContentPagePropsType> = ({
         <NormText
           marginTop={marginTop10}
           maxWidth={isSmallScreen ? "350px" : "680px"}
-          text="Сразу после свадьбы мы улетаем в свадебное путешествие, поэтому мы не успеем насладиться красотой подаренных цветов и будем рады, если вместо цветов вы решите подарить нам бутылочку хорошего вина"
+          text="Цветы, конечно, прекрасны, но мы боимся, что они завянут раньше, чем закончатся наши танцы! Лучше подарите нам ваши улыбки и хорошее настроение"
         />
       </AnimatedWrapper>
       <AnimatedWrapper>
@@ -184,7 +184,7 @@ const ContentPage: FC<ContentPagePropsType> = ({
         <NormText
           marginTop={marginTop10}
           maxWidth={isSmallScreen ? "300px" : "550px"}
-          text="Если хотите подарить нам ценный и нужный подарок, мы будем очень благодарны за вклад в бюджет нашей молодой семьи"
+          text="Если вы хотите сделать нам ценный и нужный подарок, мы будем очень благодарны за вклад в бюджет нашей молодой семьи"
         />
       </AnimatedWrapper>
       <GuestForm xyAnimation={xyAnimation} isSmallScreen={isSmallScreen} />
@@ -202,11 +202,11 @@ const ContentPage: FC<ContentPagePropsType> = ({
           marginTop={isSmallScreen ? "0px" : "30px"}
           maxWidth={isSmallScreen ? "330px" : "520px"}
           style={{ fontFamily: "Pips" }}
-          text="Если вы приготовили для нас сюрприз, не забудьте предупредить об этом нашего свадебного организатора"
+          text="Если вы приготовили для нас сюрприз, не забудьте предупредить об этом нашего свадебного координатора"
         />
       </AnimatedWrapper>
       <AnimatedWrapper x={xyAnimation} className="kursiv">
-        <NormText marginTop={marginTop20} maxWidth={maxWidthOne} text="Ольга: +7 (900) 000-00-00" />
+        <NormText marginTop={marginTop20} maxWidth={maxWidthOne} text="Эльвина: +7 (927) 675-59-29" />
       </AnimatedWrapper>
       <AnimatedWrapper>
         <a href="https://t.me/zilya_mv">
