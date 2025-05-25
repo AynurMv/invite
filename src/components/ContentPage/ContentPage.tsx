@@ -210,7 +210,7 @@ const ContentPage: FC<ContentPagePropsType> = ({
         <NormText marginTop={marginTop20} maxWidth={maxWidthOne} text="Эльвина: +7 (927) 675-59-29" />
       </AnimatedWrapper>
       <AnimatedWrapper>
-        <a href="https://wa.me/79276755929">
+        <a href="https://wa.me/79276755929" target="_blank" rel="noopener noreferrer">
           <img className="telega" src={whatsappIcon} />
         </a>
       </AnimatedWrapper>
