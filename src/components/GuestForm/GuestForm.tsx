@@ -9,7 +9,6 @@ import ZurText from "../ZurText/ZurText"
 type FormData = {
   name: string
   attendance: string
-  hasChildren: string
   congrats: string[]
 }
 
@@ -21,7 +20,6 @@ const GuestForm: FC<{
   const [form, setForm] = useState<FormData>({
     name: "",
     attendance: "",
-    hasChildren: "",
     congrats: [],
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -152,40 +150,6 @@ const GuestForm: FC<{
                         name="attendance"
                         value="maybe"
                         checked={form.attendance === "maybe"}
-                        onChange={handleInputChange}
-                      />
-                      Сообщу позже
-                    </label>
-                  </div>
-
-                  <div className="guest-form__group">
-                    <div className="guest-form__legend">Будете ли вы с детьми?</div>
-                    <label className="guest-form__radio">
-                      <input
-                        type="radio"
-                        name="hasChildren"
-                        value="yes"
-                        checked={form.hasChildren === "yes"}
-                        onChange={handleInputChange}
-                      />
-                      Да
-                    </label>
-                    <label className="guest-form__radio">
-                      <input
-                        type="radio"
-                        name="hasChildren"
-                        value="no"
-                        checked={form.hasChildren === "no"}
-                        onChange={handleInputChange}
-                      />
-                      Нет
-                    </label>
-                    <label className="guest-form__radio">
-                      <input
-                        type="radio"
-                        name="hasChildren"
-                        value="maybe"
-                        checked={form.hasChildren === "maybe"}
                         onChange={handleInputChange}
                       />
                       Сообщу позже
