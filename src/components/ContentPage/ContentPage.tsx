@@ -1,4 +1,5 @@
 import yorek from "@assets/kartinki/serdtse.svg"
+import whatsappIcon from "@assets/kartinki/whatsapp.svg"
 import animePhoto from "@assets/photo/anime.jpg"
 import aynurbekPhoto from "@assets/photo/Aynurbek2.png"
 import bolgarPhoto from "@assets/photo/bolgar.jpg"
@@ -209,11 +210,8 @@ const ContentPage: FC<ContentPagePropsType> = ({
         <NormText marginTop={marginTop20} maxWidth={maxWidthOne} text="Эльвина: +7 (927) 675-59-29" />
       </AnimatedWrapper>
       <AnimatedWrapper>
-        <a href="https://t.me/zilya_mv">
-          <img
-            className="telega"
-            src="https://static.tildacdn.com/tild3136-3338-4235-b364-313135633861/Black_14.svg"
-          />
+        <a href="https://wa.me/79276755929">
+          <img className="telega" src={whatsappIcon} />
         </a>
       </AnimatedWrapper>
       <CountdownTimer
